@@ -1,0 +1,8 @@
+{
+    "User":         "root",
+    "Password":     "123456",
+    "Proto":        "tcp",
+    "HostIP":       "0.0.0.0",
+    "Port":         8806,
+    "DatabaseName": "ChatRoom"
+}

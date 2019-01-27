@@ -3,9 +3,8 @@ package client
 import (
 	"errors"
 
+	mq "github.com/Zeng1999/ChatRoom-Go/mysql"
 	"github.com/gorilla/websocket"
-
-	mq "../mysql"
 )
 
 type Cli struct {

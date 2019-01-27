@@ -5,7 +5,7 @@ import (
 	"log"
 	"net/http"
 
-	"../client"
+	"github.com/Zeng1999/chatroom-go/client"
 )
 
 var DefaultClient *client.Cli

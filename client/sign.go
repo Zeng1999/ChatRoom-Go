@@ -1,12 +1,9 @@
 package client
 
 import (
-	"encoding/json"
 	"net/http"
 
-	"github.com/gorilla/websocket"
-
-	tools "../tools"
+	"github.com/Zeng1999/ChatRoom-Go/tools"
 )
 
 func (c *Cli) SignUp(name, pass string) error {
@@ -46,15 +43,8 @@ func (c *Cli) SignIn(w http.ResponseWriter, r *http.Request, name, pass string) 
 		CurrentRoomID: -1,
 		pass:          pass,
 		Conn:          conn,
+		MessageQueue:  tools.NewQueue(),
 	}
 	c.onlines = append(c.onlines, &u)
-	var broadcastMes struct {
-		onlineNum int
-	}
-	broadcastMes.onlineNum = len(c.onlines)
-	data, err := json.Marshal(broadcastMes)
-	if err != nil {
-		return err
-	}
-	return c.BroadcastMessage(websocket.TextMessage, data)
+	return nil
 }
